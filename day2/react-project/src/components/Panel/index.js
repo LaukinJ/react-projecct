@@ -15,9 +15,9 @@ export default class Panel extends React.Component {
         this.loadMore();
     }
     async loadMore() {
-        this.setState({
-            isLoading: true,
-        })
+        // this.setState({
+        //     isLoading: true,
+        // })
         let data = await axios.get('https://cnodejs.org/api/v1/topics', {
             params: {
                 page: this.state.page,
@@ -35,7 +35,7 @@ export default class Panel extends React.Component {
         // this.page = this.page++
         // this.news = [...this.state.news, ...data.data.data]
         this.setState({
-            isLoading: false,
+            isLoading:false,
             page: ++this.state.page,
             news: [...this.state.news, ...data.data.data]
         })
